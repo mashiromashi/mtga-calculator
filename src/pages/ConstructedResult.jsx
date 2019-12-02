@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TraditionalResult extends Component {
+class ConstructedResult extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -8,10 +8,10 @@ class TraditionalResult extends Component {
   render() {
     return (
       <div>
-        <p>Traditional</p>
+        <p>Result</p>
       </div>
     );
   }
 }
 
-export default TraditionalResult;
+export default ConstructedResult;
