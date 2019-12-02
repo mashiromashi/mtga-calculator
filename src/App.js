@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import M from "materialize-css";
 import Content from "./route/Content";
+import NavBar from "./components/NavBar/NavBar";
 
 class App extends Component {
   componentDidMount() {
@@ -9,8 +10,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <Content />
+      <div>
+        <header>
+          <NavBar />
+        </header>
+        <div className="container">
+          <Content />
+        </div>
       </div>
     );
   }
