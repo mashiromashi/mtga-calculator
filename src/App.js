@@ -1,12 +1,19 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import M from "materialize-css";
+import Content from "./route/Content";
 
-function App() {
-  return (
-    <div className="App">
-      <p>App page</p>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
+  render() {
+    return (
+      <div className="container">
+        <Content />
+      </div>
+    );
+  }
 }
 
 export default App;
