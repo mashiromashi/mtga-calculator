@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+/* eslint-disable require-jsdoc */
+import React, {Component} from 'react';
 
 class LimitedResult extends Component {
   constructor(props) {

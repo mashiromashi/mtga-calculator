@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import React, { Component } from "react";
 
 class ConstructedResult extends Component {
