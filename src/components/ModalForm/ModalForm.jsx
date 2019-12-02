@@ -3,15 +3,16 @@ import React from "react";
 import useForm from "react-hook-form";
 
 // todo : gem net calculation
+let net = 0;
 
 export default function ModalForm() {
-  const { register, handleSubmit, errors, getValues } = useForm({
+  const { register, handleSubmit, errors, getValues, setValue } = useForm({
     mode: "onChange"
   });
   const onSubmit = data => {
     JSON.stringify(data);
-    calculateGemNet();
     console.log(data);
+    localStorage.setItem("d", JSON.stringify(data));
   };
   console.log(errors);
 
@@ -20,8 +21,8 @@ export default function ModalForm() {
     const gemGrind = parseInt(getValues().gemGrind);
     const gemCost = parseInt(getValues().gemCost);
     const prizegrind = gemPrize + gemGrind;
-    const net = prizegrind - gemCost;
-    console.log(net);
+    net = parseInt(prizegrind - gemCost);
+    setValue("gemNet", net);
   };
 
   return (
@@ -184,8 +185,20 @@ export default function ModalForm() {
         {errors.gemGrind && <p>{errors.gemGrind.message}</p>}
       </div>
       <div>
-        <label htmlFor="Gem Net">Gem Net</label>
-        {calculateGemNet}
+        <label htmlFor="gemNet">Gem Net</label>
+
+        <input
+          disabled
+          name="gemNet"
+          id="gemNet"
+          type="number"
+          placeholder="0"
+          value={net}
+          ref={register}
+        ></input>
+        <button type="button" onClick={calculateGemNet}>
+          Calculate
+        </button>
       </div>
       <div>
         <label htmlFor="deck">Deck</label>
@@ -201,8 +214,9 @@ export default function ModalForm() {
       </div>
       <div>
         <label htmlFor="remark">Remark</label>
-        <input type="text" name="remark" id="" ref={register()} />
+        <input type="text" name="remark" id="" ref={register} />
       </div>
+
       <input type="submit" className="btn" />
     </form>
   );
