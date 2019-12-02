@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import AddModal from "../components/AddModal/AddModal";
 
 class LimitedResult extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class LimitedResult extends Component {
   render() {
     return (
       <div>
-        <p>LImited</p>
+        <AddModal />
       </div>
     );
   }
