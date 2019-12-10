@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import React, { Component } from "react";
 import AddModal from "../components/AddModal/AddModal";
 import TableItem from "../components/Table/Table";
@@ -11,7 +10,7 @@ class LimitedResult extends Component {
       resultData: []
     };
   }
-  // fetches data those are stored in the local storage
+  /* fetches data those are stored in the local storage */
   getData = () => {
     const data = [];
 
@@ -33,13 +32,14 @@ class LimitedResult extends Component {
     this.getData();
   }
   render() {
+    const { resultData } = this.state;
     return (
       <div>
         <AddModal />
         <div>
           <TableItem
             title="Limited Results"
-            data={this.state.resultData}
+            data={resultData}
             columns={columns}
           />
         </div>

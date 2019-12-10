@@ -21,6 +21,18 @@ module.exports = {
     "react/prop-types": [0],
     "no-console": "off",
     "no-underscore-dangle": [0],
-    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }]
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+    "require-jsdoc": [
+      "error",
+      {
+        require: {
+          FunctionDeclaration: false,
+          MethodDefinition: false,
+          ClassDeclaration: false,
+          ArrowFunctionExpression: false,
+          FunctionExpression: false
+        }
+      }
+    ]
   }
 };

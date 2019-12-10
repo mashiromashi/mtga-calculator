@@ -1,5 +1,4 @@
-/* eslint-disable require-jsdoc */
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class Math extends Component {
   constructor(props) {

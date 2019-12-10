@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import React from "react";
 import "./AddModal.css";
 import ModalForm from "../ModalForm/ModalForm";

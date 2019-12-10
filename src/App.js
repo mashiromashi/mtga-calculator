@@ -1,5 +1,4 @@
 /* eslint-disable new-cap */
-/* eslint-disable require-jsdoc */
 import React, { Component } from "react";
 import "./App.css";
 import M from "materialize-css";
