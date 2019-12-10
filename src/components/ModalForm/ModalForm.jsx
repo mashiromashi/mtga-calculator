@@ -1,19 +1,29 @@
 /* eslint-disable require-jsdoc */
 import React from "react";
 import useForm from "react-hook-form";
+import moment from "moment";
+import { createBrowserHistory } from "history";
+import { limitedString, constructedString } from "../../util/VariableHelpers";
 
-// todo : gem net calculation
+const history = createBrowserHistory();
+
 let net = 0;
+// const dateTime = moment(new Date()).format("DD-MM-YYYY_HH:mm:ss");
+const date = moment(new Date()).format("DD-MM-YYYY");
 
 export default function ModalForm() {
   const { register, handleSubmit, errors, getValues, setValue } = useForm({
-    mode: "onChange"
+    mode: "onSubmit"
   });
-  const onSubmit = data => {
-    JSON.stringify(data);
-    console.log(data);
-    localStorage.setItem("d", JSON.stringify(data));
+  const onSubmit = (data, e) => {
+    if (history.location.pathname === "/limted") {
+      localStorage.setItem(constructedString, JSON.stringify(data));
+    } else {
+      localStorage.setItem(limitedString, JSON.stringify(data));
+    }
+    e.target.reset();
   };
+
   console.log(errors);
 
   const calculateGemNet = () => {
@@ -27,6 +37,17 @@ export default function ModalForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label htmlFor="date">Date</label>
+        <input
+          type="text"
+          name="date"
+          id=""
+          disabled
+          defaultValue={date}
+          ref={register}
+        />
+      </div>
       <div>
         <label>Account</label>
         <select name="account" ref={register({ required: true })}>
@@ -66,6 +87,7 @@ export default function ModalForm() {
           <option value="na">N/A</option>
         </select>
       </div>
+
       <div>
         <label>Set</label>
         <select name="set" ref={register({ required: true })}>
@@ -84,6 +106,18 @@ export default function ModalForm() {
           <option value="RNA">RNA</option>
           <option value="WAR">WAR</option>
         </select>
+      </div>
+
+      <div>
+        <label htmlFor="color">Color</label>
+        <input
+          type="text"
+          name="color"
+          id=""
+          ref={register({
+            require: "Please input the deck color"
+          })}
+        />
       </div>
       <div>
         <label htmlFor="win">Win</label>
