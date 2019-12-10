@@ -1,0 +1,7 @@
+// table name
+Constructed Player Stats
+
+// fields
+win% : Decimal128
+NetSpendGem : Integer (can be negative)]
+total drafts : Integer (Sum of the games)

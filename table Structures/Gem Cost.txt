@@ -1,0 +1,7 @@
+To Calculate in frontend
+
+// table name
+
+gem count : integer (20000, 2500)
+cost : Decimal128 (enum: 99.99, 4.99)
+per gem : Decimal128 (gem count / cost )

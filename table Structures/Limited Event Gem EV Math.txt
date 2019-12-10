@@ -1,0 +1,21 @@
+To Calculate in Front end
+
+// table name
+Ranked Sealed
+
+// fields
+PlayerWinPercentage: Decimal128
+Win : Integer (range 1 - 7)
+Lose : Integer (range 1 - 7)
+%Chance : Integer (1- PlayerWinPercentage)
+Gems : Integer (prize for the row result)
+Gem EV : (Gems * %Chance)
+Games : Integer (Win + Lose)
+Game EV :Decimal128 (Games * %Chance)
+Total Gem EV :Decimal128 (Sum of Gem EV)
+Total Game EV : Decimal128 (Sum of Game EV)
+Final EV : Decimal128 (Total Gem Ev / 2000)
+Final Cost Decimal128 (2000 - Total Gem Ev)
+Gems/Game Cost : Decimal128 (Final Cost / Total Game Ev)
+Pre-Grind $/Game Cost ($100 bundle) : Decimal128 (Gems/Game Cost/ 0.005)
+Pre-Grind $/Game Cost (welcome bundle): Decimal128 (Gems/Game Cost/ 0.002)

@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable new-cap */
+/* eslint-disable require-jsdoc */
+import React, { Component } from "react";
+import "./App.css";
+import M from "materialize-css";
+import Content from "./route/Content";
+import NavBar from "./components/NavBar/NavBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    M.AutoInit();
+  }
+  render() {
+    return (
+      <div>
+        <header>
+          <NavBar />
+        </header>
+        <div>
+          <Content />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,6 @@
+✔ fix the modal form @started(19-12-11 03:19) @done(19-12-11 03:44) @lasted(25m44s)
+    It must be a functional component that works for both limited and constructed pages
+✔ Fix Data entry @done(19-12-11 04:27)
+    Fixed the data data entry from either limited page or constructed page depending on the route
+    while adding limited or constructed at the end of the key in local storage
+☐ Start Constructed Page

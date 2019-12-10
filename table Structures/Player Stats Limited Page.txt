@@ -1,0 +1,7 @@
+// table name
+Limited Player Stats
+
+// fields
+Limitedwin% : Decimal128
+LimitedNetSpendGem : Integer (can be negative)
+Limitedtotal drafts : Integer (Sum of the games)
